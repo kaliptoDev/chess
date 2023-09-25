@@ -1,0 +1,13 @@
+.case {
+    width: 12.5%;
+    height: 12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.lime {
+    background-color: lime;
+    opacity: 0.5;
+}
