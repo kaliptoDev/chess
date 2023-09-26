@@ -15,5 +15,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Router>
       </CurrentChessboardProvider>
     </CurrentLanguageProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 )
