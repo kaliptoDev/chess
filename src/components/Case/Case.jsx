@@ -1,18 +1,27 @@
 import './Case.css'
 import useCurrentChessboardState from '../../hooks/useCurrentChessboardState'
-import { useState } from 'react'
+import useCurrentChessboardHighlighted from '../../hooks/useCurrentChessboardHighlighted'
+import { useEffect, useState } from 'react'
 
 const Case = ({ children }) => {
 
     const { currentChessboardState, setCurrentChessboardState } = useCurrentChessboardState()
+    const { currentChessboardHighlighted, setCurrentChessboardHighlighted } = useCurrentChessboardHighlighted()
+
     const [backgroundColor, setBackgroundColor] = useState('')
-    const [dotColor, setDotColor] = useState('lime')
+    const [dotColor, setDotColor] = useState('')
 
     const xCoordinate = children[1].props.children
     const yCoordinate = children[0].props.children
 
     const coordinates = xCoordinate + yCoordinate
 
+    useEffect(() => {
+        if (currentChessboardHighlighted[coordinates] != false ) {
+            console.log('currentChessboardHighlighted[coordinates]', currentChessboardHighlighted[coordinates])
+            // setDotColor('lime')
+        }
+    }, [currentChessboardHighlighted])
     return (
         <div className='case'>
             <div className={`case__bg ${backgroundColor}`}></div>
