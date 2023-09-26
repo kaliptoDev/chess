@@ -1,13 +1,28 @@
 .case {
-    width: 12.5%;
-    height: 12.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  width: 12.5%;
+  height: 12.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.case__bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
 }
 
 .lime {
-    background-color: lime;
-    opacity: 0.5;
+  background-color: lime;
+}
+
+.case img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  z-index: 100;
 }
