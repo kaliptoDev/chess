@@ -4,13 +4,13 @@ import { useState, createContext, useEffect } from 'react'
 // CONTEXT = definition et/ou valeurs par default
 export const CurrentChessboardStateContext = createContext({
     currentChessboardState: {},
-    setCurrentChessboardState: () => { }
+    setCurrentChessboardState: () => {}
 })
 
 // PROVIDER = fournisseur du context
-const CurrentChessboardProvider = ({ children }) => {
+const CurrentChessboardStateProvider = ({ children }) => {
 
-    const [currentChessboardState, setCurrentChessboardState] = useState('fr');
+    const [currentChessboardState, setCurrentChessboardState] = useState({});
 
     useEffect(() => {
         setCurrentChessboardState(
@@ -82,8 +82,12 @@ const CurrentChessboardProvider = ({ children }) => {
             }
         )
 
-        localStorage.setItem('currentChessboardState', JSON.stringify(currentChessboardState));
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem('currentChessboardState', JSON.stringify(currentChessboardState));
+    }
+        , [currentChessboardState])
 
     return (
         <CurrentChessboardStateContext.Provider value={{ currentChessboardState, setCurrentChessboardState }}>
@@ -92,4 +96,4 @@ const CurrentChessboardProvider = ({ children }) => {
     )
 }
 
-export default CurrentChessboardProvider
+export default CurrentChessboardStateProvider
