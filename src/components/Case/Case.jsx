@@ -1,31 +1,30 @@
 import './Case.css'
 import useCurrentChessboardState from '../../hooks/useCurrentChessboardState'
-import useCurrentChessboardHighlighted from '../../hooks/useCurrentChessboardHighlighted'
+import useCurrentChessboardHighlightedBlack from '../../hooks/useCurrentChessboardHighlightedBlack'
+import useCurrentChessboardHighlightedWhite from '../../hooks/useCurrentChessboardHighlightedWhite'
 import { useEffect, useState } from 'react'
 
 const Case = ({ children }) => {
 
     const { currentChessboardState, setCurrentChessboardState } = useCurrentChessboardState()
-    const { currentChessboardHighlighted, setCurrentChessboardHighlighted } = useCurrentChessboardHighlighted()
+    const { currentChessboardHighlightedWhite, setCurrentChessboardHighlightedWhite } = useCurrentChessboardHighlightedWhite()
+    const { currentChessboardHighlightedBlack, setCurrentChessboardHighlightedBlack } = useCurrentChessboardHighlightedBlack()
 
     const [backgroundColor, setBackgroundColor] = useState('')
-    const [dotColor, setDotColor] = useState('')
 
     const xCoordinate = children[1].props.children
     const yCoordinate = children[0].props.children
 
     const coordinates = xCoordinate + yCoordinate
+    let dotColorWhite = currentChessboardHighlightedWhite[coordinates] != false ? 'lime' : ''
+    let dotColorBlack = currentChessboardHighlightedBlack[coordinates] != false ? 'lime' : ''
 
-    useEffect(() => {
-        if (currentChessboardHighlighted[coordinates] != false ) {
-            console.log('currentChessboardHighlighted[coordinates]', currentChessboardHighlighted[coordinates])
-            // setDotColor('lime')
-        }
-    }, [currentChessboardHighlighted])
+
+
     return (
         <div className='case'>
             <div className={`case__bg ${backgroundColor}`}></div>
-            <div className={`case__dot ${dotColor}`}></div>
+            <div className={`case__dot ${dotColorWhite}`}></div>
             {
                 currentChessboardState[coordinates] &&
                 <img
