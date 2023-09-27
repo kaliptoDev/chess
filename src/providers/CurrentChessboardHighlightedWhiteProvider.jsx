@@ -2,18 +2,18 @@ import { useState, createContext, useEffect } from 'react'
 
 
 // CONTEXT = definition et/ou valeurs par default
-export const CurrentChessboardHighlightedContext = createContext({
-    CurrentChessboardHighlighted: {},
-    setCurrentChessboardHighlighted: () => { }
+export const CurrentChessboardHighlightedWhiteContext = createContext({
+    CurrentChessboardHighlightedWhite: {},
+    setCurrentChessboardHighlightedWhite: () => { }
 })
 
 // PROVIDER = fournisseur du context
-const CurrentChessboardHighlightedProvider = ({ children }) => {
+const CurrentChessboardHighlightedWhiteProvider = ({ children }) => {
 
-    const [currentChessboardHighlighted, setCurrentChessboardHighlighted] = useState('fr');
+    const [currentChessboardHighlightedWhite, setCurrentChessboardHighlightedWhite] = useState({});
 
     useEffect(() => {
-        setCurrentChessboardHighlighted(
+        setCurrentChessboardHighlightedWhite(
             {
                 "A1": false,
                 "B1": false,
@@ -85,16 +85,15 @@ const CurrentChessboardHighlightedProvider = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('currentChessboardHighlighted', JSON.stringify(currentChessboardHighlighted));
-        console.log('currentChessboardHighlighted', currentChessboardHighlighted)
+        localStorage.setItem('currentChessboardHighlightedWhite', JSON.stringify(currentChessboardHighlightedWhite));
     }
-        , [currentChessboardHighlighted])
+        , [currentChessboardHighlightedWhite])
 
     return (
-        <CurrentChessboardHighlightedContext.Provider value={{ currentChessboardHighlighted, setCurrentChessboardHighlighted }}>
+        <CurrentChessboardHighlightedWhiteContext.Provider value={{ currentChessboardHighlightedWhite, setCurrentChessboardHighlightedWhite }}>
             {children}
-        </CurrentChessboardHighlightedContext.Provider>
+        </CurrentChessboardHighlightedWhiteContext.Provider>
     )
 }
 
-export default CurrentChessboardHighlightedProvider
+export default CurrentChessboardHighlightedWhiteProvider
