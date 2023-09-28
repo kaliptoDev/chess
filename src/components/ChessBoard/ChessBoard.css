@@ -3,7 +3,7 @@
   height: 80vh;
   width: 80vh;
   position: relative;
-  background-image: url("assets/chessboard.jpeg");
+  background-image: url("/assets/chessboard.jpeg");
   background-size: cover;
   display: flex;
   flex-wrap: wrap;

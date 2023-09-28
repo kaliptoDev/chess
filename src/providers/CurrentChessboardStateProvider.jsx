@@ -31,7 +31,7 @@ const CurrentChessboardStateProvider = ({ children }) => {
                 "F2": "white_pawn",
                 "G2": "white_pawn",
                 "H2": "white_pawn",
-                "A3": null,
+                "A3": "black_pawn",
                 "B3": null,
                 "C3": null,
                 "D3": null,
