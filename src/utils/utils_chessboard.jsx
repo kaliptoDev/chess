@@ -95,9 +95,6 @@ const getQueenMoves = (chessboard, coordinates, color) => { }
 
 const getKingMoves = (chessboard, coordinates, color) => { }
 
-const getHighlightMapFromMoves = (moves) => {
-}
-
 const getBestMove = (piece, coordinates, moves) => { };
 
 const displayPieceLines = (piece, coordinates) => { };
@@ -123,6 +120,9 @@ const getScore = (piece, coordinates) => { };
 const getBoard = () => { };
 
 const updateBoard = () => { };
+
+const getHighlightMapFromMoves = (moves, setCurrentChessboardHighlightedWhite) => {
+}
 
 const choosePieceFromPawnPromotion = (coordinates, color, currentChessboardState, setCurrentChessboardState) => {
 
