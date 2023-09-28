@@ -1,14 +1,14 @@
-import { useContext } from "react"
-import { CurrentChessboardHighlightedBlackContext } from "../providers/CurrentChessboardHighlightedBlackProvider.jsx"
+// import { useContext } from "react"
+// import { CurrentChessboardHighlightedBlackContext } from "../providers/CurrentChessboardHighlightedBlackProvider.jsx"
 
-const useCurrentChessboardHighlightedBlack = () => {
-    const context = useContext(CurrentChessboardHighlightedBlackContext)
+// const useCurrentChessboardHighlightedBlack = () => {
+//     const context = useContext(CurrentChessboardHighlightedBlackContext)
 
-    if (!context) {
-        throw new Error('useCurrentChessboardHighlighted must be used within CurrentChessboardHighlightedProvider')
-    }
+//     if (!context) {
+//         throw new Error('useCurrentChessboardHighlighted must be used within CurrentChessboardHighlightedProvider')
+//     }
 
-    return context
-}
+//     return context
+// }
 
-export default useCurrentChessboardHighlightedBlack; 
+// export default useCurrentChessboardHighlightedBlack; 

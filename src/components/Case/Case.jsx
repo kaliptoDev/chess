@@ -1,6 +1,6 @@
 import './Case.css'
 import useCurrentChessboardState from '../../hooks/useCurrentChessboardState'
-import useCurrentChessboardHighlightedBlack from '../../hooks/useCurrentChessboardHighlightedBlack'
+// import useCurrentChessboardHighlightedBlack from '../../hooks/useCurrentChessboardHighlightedBlack'
 import useCurrentChessboardHighlightedWhite from '../../hooks/useCurrentChessboardHighlightedWhite'
 import { useEffect, useState } from 'react'
 import useCurrentSelectedPiece from '../../hooks/useCurrentSelectedPiece'
@@ -11,7 +11,7 @@ const Case = ({ children }) => {
 
     const { currentChessboardState, setCurrentChessboardState } = useCurrentChessboardState()
     const { currentChessboardHighlightedWhite, setCurrentChessboardHighlightedWhite } = useCurrentChessboardHighlightedWhite()
-    const { currentChessboardHighlightedBlack, setCurrentChessboardHighlightedBlack } = useCurrentChessboardHighlightedBlack()
+    // const { currentChessboardHighlightedBlack, setCurrentChessboardHighlightedBlack } = useCurrentChessboardHighlightedBlack()
 
     const [backgroundColor, setBackgroundColor] = useState('')
 
@@ -22,9 +22,9 @@ const Case = ({ children }) => {
     const coordinates = xCoordinate + yCoordinate
 
     if (currentChessboardHighlightedWhite != undefined) {
-        if (currentChessboardHighlightedWhite[coordinates] != undefined && currentChessboardHighlightedBlack[coordinates] != null && currentChessboardHighlightedBlack[coordinates] != '') {
+        if (currentChessboardHighlightedWhite[coordinates] != undefined && currentChessboardHighlightedWhite[coordinates] != null && currentChessboardHighlightedWhite[coordinates] != '') {
             dotColorWhite = currentChessboardHighlightedWhite[coordinates] != false ? 'lime' : ''
-            dotColorBlack = currentChessboardHighlightedBlack[coordinates] != false ? 'lime' : ''
+            // dotColorBlack = currentChessboardHighlightedBlack[coordinates] != false ? 'lime' : ''
         }
     }
 

@@ -5,7 +5,7 @@ import './index.css'
 import { BrowserRouter as Router } from 'react-router-dom'
 import CurrentLanguageProvider from './providers/CurrentLanguageProvider.jsx'
 import CurrentChessboardProvider from './providers/CurrentChessboardStateProvider.jsx'
-import CurrentChessboardHighlightedProvider from './providers/CurrentChessboardHighlightedBlackProvider.jsx'
+// import CurrentChessboardHighlightedBlackProvider from './providers/CurrentChessboardHighlightedBlackProvider.jsx'
 import CurrentChessboardHighlightedWhiteProvider from './providers/CurrentChessboardHighlightedWhiteProvider.jsx'
 import CurrentSelectedPieceProvider from './providers/CurrentSelectedPieceProvider.jsx'
 import CurrentColorProvider from './providers/CurrentColorProvider.jsx'
@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <CurrentLanguageProvider>
       <CurrentChessboardProvider>
         <CurrentChessboardHighlightedWhiteProvider >
-          <CurrentChessboardHighlightedProvider>
+          {/* <CurrentChessboardHighlightedBlackProvider> */}
             <CurrentSelectedPieceProvider>
               <CurrentColorProvider>
                 <Router>
@@ -23,7 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </Router>
               </CurrentColorProvider>
             </CurrentSelectedPieceProvider>
-          </CurrentChessboardHighlightedProvider>
+          {/* </CurrentChessboardHighlightedBlackProvider> */}
         </CurrentChessboardHighlightedWhiteProvider>
       </CurrentChessboardProvider>
     </CurrentLanguageProvider>
