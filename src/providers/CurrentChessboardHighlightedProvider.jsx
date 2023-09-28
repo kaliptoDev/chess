@@ -2,18 +2,18 @@ import { useState, createContext, useEffect } from 'react'
 
 
 // CONTEXT = definition et/ou valeurs par default
-export const CurrentChessboardHighlightedWhiteContext = createContext({
-    CurrentChessboardHighlightedWhite: {},
-    setCurrentChessboardHighlightedWhite: () => { }
+export const CurrentChessboardHighlightedContext = createContext({
+    CurrentChessboardHighlighted: {},
+    setCurrentChessboardHighlighte: () => { }
 })
 
 // PROVIDER = fournisseur du context
-const CurrentChessboardHighlightedWhiteProvider = ({ children }) => {
+const CurrentChessboardHighlightedProvider = ({ children }) => {
 
-    const [currentChessboardHighlightedWhite, setCurrentChessboardHighlightedWhite] = useState({});
+    const [currentChessboardHighlighted, setCurrentChessboardHighlighted] = useState({});
 
     useEffect(() => {
-        setCurrentChessboardHighlightedWhite(
+        setCurrentChessboardHighlighted(
             {
                 "A1": false,
                 "B1": false,
@@ -85,15 +85,15 @@ const CurrentChessboardHighlightedWhiteProvider = ({ children }) => {
     }, [])
 
     useEffect(() => {
-        localStorage.setItem('currentChessboardHighlightedWhite', JSON.stringify(currentChessboardHighlightedWhite));
+        localStorage.setItem('currentChessboardHighlighted', JSON.stringify(currentChessboardHighlighted));
     }
-        , [currentChessboardHighlightedWhite])
+        , [currentChessboardHighlighted])
 
     return (
-        <CurrentChessboardHighlightedWhiteContext.Provider value={{ currentChessboardHighlightedWhite, setCurrentChessboardHighlightedWhite }}>
+        <CurrentChessboardHighlightedContext.Provider value={{ currentChessboardHighlighted, setCurrentChessboardHighlighted }}>
             {children}
-        </CurrentChessboardHighlightedWhiteContext.Provider>
+        </CurrentChessboardHighlightedContext.Provider>
     )
 }
 
-export default CurrentChessboardHighlightedWhiteProvider
+export default CurrentChessboardHighlightedProvider

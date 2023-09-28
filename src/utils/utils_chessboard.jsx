@@ -121,7 +121,7 @@ const getBoard = () => { };
 
 const updateBoard = () => { };
 
-const getHighlightMapFromMoves = (moves, setCurrentChessboardHighlightedWhite) => {
+const getHighlightMapFromMoves = (moves, setCurrentChessboardHighlighted) => {
 }
 
 const choosePieceFromPawnPromotion = (coordinates, color, currentChessboardState, setCurrentChessboardState) => {

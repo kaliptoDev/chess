@@ -2,7 +2,7 @@ import './Home.css'
 import ChessBoard from '../../components/ChessBoard/ChessBoard'
 import Case from '../../components/Case/Case'
 import _ from 'lodash'
-import useCurrentChessboardHighlighted from '../../hooks/useCurrentChessboardHighlightedWhite'
+import useCurrentChessboardHighlighted from '../../hooks/useCurrentChessboardHighlighted'
 import { useEffect } from 'react'
 
 const Home = () => {

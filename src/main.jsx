@@ -6,7 +6,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import CurrentLanguageProvider from './providers/CurrentLanguageProvider.jsx'
 import CurrentChessboardProvider from './providers/CurrentChessboardStateProvider.jsx'
 // import CurrentChessboardHighlightedBlackProvider from './providers/CurrentChessboardHighlightedBlackProvider.jsx'
-import CurrentChessboardHighlightedWhiteProvider from './providers/CurrentChessboardHighlightedWhiteProvider.jsx'
+import CurrentChessboardHighlightedWhiteProvider from './providers/CurrentChessboardHighlightedProvider.jsx'
 import CurrentSelectedPieceProvider from './providers/CurrentSelectedPieceProvider.jsx'
 import CurrentColorProvider from './providers/CurrentColorProvider.jsx'
 
