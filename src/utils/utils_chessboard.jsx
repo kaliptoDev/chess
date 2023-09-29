@@ -47,25 +47,16 @@ const getPawnMoves = (coordinates, color, currentChessboardState, setCurrentChes
 
     let y = coordinates.split("")[1]
     y = parseInt(y) + 1
+    let x = coordinates.split("")[0]
 
-    if (currentChessboardState[coordinates.split("")[0] + y] === null) { //checks for piece in front
-        moves.push(coordinates.split("")[0] + y)
+    if (currentChessboardState[x + y] === null) { //checks for piece in front
+        moves.push(x + y)
         if (coordinates.split("")[1] === '2') {
-            if (currentChessboardState[coordinates.split("")[0] + '4'] === null) { //checks for piece in front of the piece in front
-                moves.push(coordinates.split("")[0] + '4');
+            if (currentChessboardState[x + '4'] === null) { //checks for piece in front of the piece in front
+                moves.push(x + '4');
             }
         }
     }
-
-    // if (coordinates.split("")[1] === '2') {
-
-    //     if (currentChessboardState[coordinates.split("")[0] + '3'] === null) { //checks for piece in front
-    //         moves.push(coordinates.split("")[0] + '3');
-    //         if (currentChessboardState[coordinates.split("")[0] + '4'] === null) { //checks for piece in front of the piece in front
-    //             moves.push(coordinates.split("")[0] + '4');
-    //         }
-    //     }
-    // }
 
     if (coordinates.split("")[1] == '8') {
         choosePieceFromPawnPromotion(coordinates, color, currentChessboardState, setCurrentChessboardState)
@@ -239,6 +230,27 @@ const getKnightMoves = (coordinates, color, currentChessboardState) => {
 
     let x = coordinates.split("")[0]
     let y = coordinates.split("")[1]
+
+    const possibleMoves = [
+        String.fromCharCode(x.charCodeAt(0) + 2) + (parseInt(y) + 1),
+        String.fromCharCode(x.charCodeAt(0) + 2) + (parseInt(y) - 1),
+        String.fromCharCode(x.charCodeAt(0) - 2) + (parseInt(y) + 1),
+        String.fromCharCode(x.charCodeAt(0) - 2) + (parseInt(y) - 1),
+        String.fromCharCode(x.charCodeAt(0) + 1) + (parseInt(y) + 2),
+        String.fromCharCode(x.charCodeAt(0) - 1) + (parseInt(y) + 2),
+        String.fromCharCode(x.charCodeAt(0) + 1) + (parseInt(y) - 2),
+        String.fromCharCode(x.charCodeAt(0) - 1) + (parseInt(y) - 2)
+    ]
+
+    possibleMoves.forEach(move => {
+        if (currentChessboardState[move] !== null && currentChessboardState[move] !== undefined) {
+            if (currentChessboardState[move].split("_")[0] !== color) {
+                moves.push(move)
+            }
+        } else {
+            moves.push(move)
+        }
+    })
 
 
     return moves
