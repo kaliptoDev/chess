@@ -258,12 +258,40 @@ const getKnightMoves = (coordinates, color, currentChessboardState) => {
 
 const getQueenMoves = (coordinates, color, currentChessboardState) => {
     let moves = []
+    let diagonalMoves = getBishopMoves(coordinates, color, currentChessboardState)
+    let lineMoves = getRookMoves(coordinates, color, currentChessboardState)
 
+    moves = diagonalMoves.concat(lineMoves)
+    
     return moves
 }
 
 const getKingMoves = (coordinates, color, currentChessboardState) => {
     let moves = []
+
+    let x = coordinates.split("")[0]
+    let y = coordinates.split("")[1]
+
+    const possibleMoves = [
+        String.fromCharCode(x.charCodeAt(0) + 1) + y,
+        String.fromCharCode(x.charCodeAt(0) - 1) + y,
+        x + (parseInt(y) + 1),
+        x + (parseInt(y) - 1),
+        String.fromCharCode(x.charCodeAt(0) + 1) + (parseInt(y) + 1),
+        String.fromCharCode(x.charCodeAt(0) - 1) + (parseInt(y) + 1),
+        String.fromCharCode(x.charCodeAt(0) + 1) + (parseInt(y) - 1),
+        String.fromCharCode(x.charCodeAt(0) - 1) + (parseInt(y) - 1)
+    ]
+
+    possibleMoves.forEach(move => {
+        if (currentChessboardState[move] !== null && currentChessboardState[move] !== undefined) {
+            if (currentChessboardState[move].split("_")[0] !== color) {
+                moves.push(move)
+            }
+        } else {
+            moves.push(move)
+        }
+    })
 
     return moves
 }
