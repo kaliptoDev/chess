@@ -35,13 +35,13 @@ const Case = ({ children }) => {
         if (currentChessboardState[coordinates] !== null) {
             if (currentChessboardState[coordinates].split('_')[0] === currentColor) {
                 setCurrentSelectedPiece(coordinates + '-' + currentChessboardState[coordinates])
+                handleHighlight(coordinates + '-' + currentChessboardState[coordinates])
             }
         }
         else {
             setCurrentSelectedPiece('')
         }
 
-        handleHighlight(coordinates + '-' + currentChessboardState[coordinates])
 
     }
 
@@ -52,8 +52,7 @@ const Case = ({ children }) => {
             let piece = currentPiece.split('-')[1]
             // console.log(coords, piece)
             const highlightMap = getPossibleMoves(piece, coords, currentChessboardState, setCurrentChessboardState)
-                setCurrentChessboardHighlighted(highlightMap)
-        
+            setCurrentChessboardHighlighted(highlightMap)
         }
     }
 
