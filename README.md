@@ -1,8 +1,7 @@
-# React + Vite
+# React (ViteJS) Chess game starting. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Will eventually end up with a websocket NodeJS server to allow people to play. 
 
-Currently, two official plugins are available:
+Chess states will be stored in a database, so people can stop playing and come back later.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Chess AI will be developped eventually too, with multiple levels of difficulty, and different depths of best move choices.
