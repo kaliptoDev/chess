@@ -11,6 +11,8 @@ const getPossibleMoves = (piece, coordinates, currentChessboardState, setCurrent
     const color = piece.split("_")[0]
     let moves = [];
 
+    console.log('hello')
+
     switch (piece.split("_")[1]) {
         case 'pawn':
             moves = getPawnMoves(coordinates, color, currentChessboardState, setCurrentChessboardState);
