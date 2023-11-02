@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && scp -r -P 2022 C:/Users/kaliptoDev/Desktop/Cours/P8Vanilla/projet8/dist/* kalipto@192.168.1.33:/home/kalipto/containers/chess/www/",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
