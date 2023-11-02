@@ -42,7 +42,7 @@ const CurrentChessboardStateProvider = ({ children }) => {
                 "A4": null,
                 "B4": null,
                 "C4": null,
-                "D4": "white_king",
+                "D4": "white_queen",
                 "E4": null,
                 "F4": null,
                 "G4": null,
